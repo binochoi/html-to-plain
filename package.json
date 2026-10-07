@@ -1,0 +1,69 @@
+{
+  "name": "html-to-plain",
+  "version": "0.0.1",
+  "description": "Convert HTML to plain text: strip tags, decode HTML entities, collapse whitespace. Zero dependencies, no DOMParser — works on Cloudflare Workers, edge runtimes, browsers, and Node.js.",
+  "type": "module",
+  "license": "MIT",
+  "author": "binochoi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binochoi/html-to-plain.git"
+  },
+  "homepage": "https://github.com/binochoi/html-to-plain#readme",
+  "bugs": {
+    "url": "https://github.com/binochoi/html-to-plain/issues"
+  },
+  "keywords": [
+    "html-to-plain",
+    "html",
+    "html-to-text",
+    "html-to-plain-text",
+    "plain-text",
+    "plaintext",
+    "strip-html",
+    "strip-tags",
+    "remove-html-tags",
+    "html-entities",
+    "decode-entities",
+    "entities",
+    "text-extraction",
+    "cloudflare-workers",
+    "workerd",
+    "edge",
+    "edge-runtime",
+    "no-dom",
+    "zero-dependency",
+    "isomorphic",
+    "esm",
+    "tiptap",
+    "prosemirror",
+    "rich-text",
+    "wysiwyg",
+    "search-index",
+    "excerpt"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "obuild --stub",
+    "build:dist": "obuild",
+    "release": "pnpm build:dist && pnpm publish --ignore-scripts",
+    "clean": "rm -rf dist node_modules .turbo",
+    "lint": "oxlint ./src && tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "obuild": "^0.4.38",
+    "oxlint": "^1.67.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
